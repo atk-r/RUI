@@ -1,5 +1,11 @@
 git clone https://github.com/atk-r/RUI
-mv RUI/rui rui
+read -p "Enter directory for RUI: " ruiDir
+mv RUI/rui $ruiDir
+read -p "Enter directory for CSS: " cssDir
+mv RUI/globals.css $cssDir
+mv RUI/styles.css $cssDir
+read -p "Enter directory for fonts: " fontsDir
+mv RUI/fonts $fontsDir
 rm -rf RUI
 npm i @emotion/react @reach/portal @reach/tabs @react-aria/button @react-aria/dialog @react-aria/overlays @react-aria/switch @react-aria/tooltip @react-aria/visually-hidden autosize date-fns downshift is-mobile jotai react-popper react-uid @emotion/babel-plugin --force
 
@@ -16,3 +22,5 @@ else
     echo '  "plugins": ["@emotion/babel-plugin"]' >> "$BABELRC_FILE"
     echo '}' >> "$BABELRC_FILE"
 fi
+
+echo 'React RUI installation complete!'
